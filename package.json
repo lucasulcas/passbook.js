@@ -1,6 +1,6 @@
 {
   "name": "passbook.js",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "All you need to serve passbooks with your Node.js backend",
   "main": "./index.js",
   "scripts": {
@@ -8,21 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/volodymyrlut/passbook.js"
+    "url": "https://github.com/volodymyrlut/passbook.js.git"
   },
   "bin": {
     "node-passbook": "./node-passbook"
   },
   "dependencies": {
-    "underscore": "^1.4.4",
-    "archiver": "^0.4.1",
-    "async": "^0.2.6",
-    "fs": "latest",
-    "cli": "latest"
+    "underscore": "1.4.4",
+    "archiver": "0.4.1",
+    "async": "0.2.6",
+    "fs": "",
+    "cli": ""
   },
   "devDependencies": {
-    "mocha": "^1.6.0",
-    "should": "^1.2.0"
+    "mocha": "1.6.0",
+    "should": "1.2.0"
   },
   "keywords": [
     "Node.js",
@@ -33,20 +33,34 @@
     "passbook",
     "library"
   ],
-  "author": { 
-    "name" : "Volodymyr Lut",
-    "email" : "volodymyrgalan@gmail.com",
-    "url" : "http://lut.rocks/"
+  "author": {
+    "name": "Volodymyr Lut"
   },
-  "contributors": [
-    {
-      "name" : "justhappens",
-      "url" : "https://github.com/justhappens"
-    }
-  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/volodymyrlut/passbook.js/issues"
   },
-  "homepage": "https://github.com/volodymyrlut/passbook.js"
+  "homepage": "https://github.com/volodymyrlut/passbook.js",
+  "gitHead": "b574ba6e9eb4fc9b6e5d6094669d730f9ba16882",
+  "_id": "passbook.js@1.0.1",
+  "_shasum": "aca238efe624b06ea43810c1dd67621ad1a2b7a8",
+  "_from": "passbook.js@*",
+  "_npmVersion": "2.5.1",
+  "_nodeVersion": "0.12.1",
+  "_npmUser": {
+    "name": "volodymyrlut",
+    "email": "volodymyrgalan@gmail.com"
+  },
+  "dist": {
+    "shasum": "aca238efe624b06ea43810c1dd67621ad1a2b7a8",
+    "tarball": "http://npmreg.innovate.ibm.com:4873/passbook.js/-/passbook.js-1.0.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "volodymyrlut",
+      "email": "volodymyrgalan@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "http://npmreg.innovate.ibm.com:4873/passbook.js/-/passbook.js-1.0.1.tgz"
 }
