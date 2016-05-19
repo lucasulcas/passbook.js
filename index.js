@@ -3,25 +3,50 @@ exports.createPassbook = function(type, resources, keys, password,callback){
 	var fs = require("fs");
 	var obj;
 	fs.readFile(resources+'pass.json', 'utf8', function (err, data) {
-  		if (err) throw err;
-  		console.log('pass.json file redaded successfully');
-  		obj = JSON.parse(data);
-  		var template = passbook.createTemplate(type, {
-		passTypeIdentifier: obj.passTypeIdentifier,
-		teamIdentifier:     obj.teamIdentifier,
-		organizationName:   obj.organizationName
+		if (err) throw err;
+		console.log('pass.json file redaded successfully');
+		obj = JSON.parse(data);
+		var template = passbook.createTemplate(type, {
+			passTypeIdentifier: obj.passTypeIdentifier,
+			teamIdentifier:     obj.teamIdentifier,
+			organizationName:   obj.organizationName
 		}, {
-		certs: {
-		  wwdr: keys+'/wwdr.pem',
-		  pass: keys+'/Certificates.pem', // pem with certificate and private key
-		  password: password // pass phrase for the pass_cert.pem file
-		}
+			certs: {
+				wwdr: keys+'/wwdr.pem',
+				pass: keys+'/Certificates.pem', // pem with certificate and private key
+				password: password // pass phrase for the pass_cert.pem file
+			}
 		})
 		var pass = template.createPass(obj);
 		var stream = pass.pipe(fs.createWriteStream('pass.pkpass'));
 		stream.on('finish',function(){
 			callback();
 		});
+	});
+}
+
+exports.streamPassbook = function(type, resources, keys, password){
+	var passbook = require('./lib/index.js');
+	var fs = require("fs");
+	var obj;
+	fs.readFile(resources+'pass.json', 'utf8', function (err, data) {
+		if (err) throw err;
+		console.log('pass.json file redaded successfully');
+		obj = JSON.parse(data);
+		var template = passbook.createTemplate(type, {
+			passTypeIdentifier: obj.passTypeIdentifier,
+			teamIdentifier:     obj.teamIdentifier,
+			organizationName:   obj.organizationName
+		}, {
+			certs: {
+				wwdr: keys+'/wwdr.pem',
+				pass: keys+'/Certificates.pem', // pem with certificate and private key
+				password: password // pass phrase for the pass_cert.pem file
+			}
+		})
+		var pass = template.createPass(obj);
+
+		callback(pass);
 	});
 }
 
