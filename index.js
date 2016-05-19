@@ -25,7 +25,7 @@ exports.createPassbook = function(type, resources, keys, password,callback){
 	});
 }
 
-exports.streamPassbook = function(type, resources, keys, password){
+exports.streamPassbook = function(type, resources, keys, password,callback){
 	var passbook = require('./lib/index.js');
 	var fs = require("fs");
 	var obj;
